@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="all" basedir=".">
+
+	<!-- Make all -->
+	<target name="all" depends="clean,copy,deploy" description="Make all" />
+
+	<!-- Clean completely -->
+	<target name="clean" description="Clean completey">
+		<delete dir="build" />
+		<delete file="echoxul.war" />
+	</target>
+
+	<!-- Copy everything to build directory -->
+	<target name="copy" description="Copy everything to build directory">
+		<mkdir dir="build/WEB-INF/classes" />
+		<mkdir dir="build/WEB-INF/lib" />
+		<copy file="web.xml" todir="build/WEB-INF" />
+		<copy file="test.xul" todir="build/WEB-INF/classes" />
+		<copy file="log4j.properties" todir="build/WEB-INF/classes" />
+		<copy file="test.style" todir="build/WEB-INF/classes" />
+		<copy todir="build/WEB-INF/classes">
+			<fileset dir="bin" />
+		</copy>
+		<copy todir="build/WEB-INF/lib">
+			<fileset dir="lib" excludes="servlet-api.jar" />
+		</copy>
+	</target>
+
+	<!-- Create war -->
+	<!--
+  <target name="war" depends="copy" description="Create war">
+    <zip destfile="echoxul.war">
+      <fileset dir="build" includes="**"/>
+    </zip>
+  </target>
+	-->
+
+	<!-- Deploy -->
+	<target name="deploy" depends="copy" description="Deploy war">
+                <!--<delete dir="tomcat/webapps/echoxul" />
+		<copy todir="tomcat/webapps/echoxul">
+			<fileset dir="build" />
+                </copy>-->
+	</target>
+</project>

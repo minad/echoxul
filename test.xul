@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<window>
+  <splitpane orient="vertical">
+  	<script>
+		function playWithFire() {
+		  	button1.getButton().setBackground(Color.RED);
+		  	button2.getButton().setBackground(Color.GREEN);
+		   	button3.getButton().setBackground(Color.BLUE);
+		   	button4.getButton().setBackground(Color.YELLOW);
+			button5.getButton().setBackground(Color.ORANGE);
+		}
+	</script>
+    <menubar>
+      <menu label="Menu1">
+        <menuitem label="Item1"/>
+        <menuitem label="Item2"/>
+        <menuitem label="Item3"/>
+        <menuitem label="Item4"/>
+        <menuseparator/>
+        <menuitem label="Item5"/>
+        <menuitem label="Item6"/>
+      </menu>
+      <menu label="Menu2">
+        <menuitem label="Item1"/>
+        <menuitem label="Item2"/>
+        <menuitem label="Item3"/>
+        <menuitem label="Item4"/>
+        <menuitem label="Item5"/>
+        <menuitem label="Item6"/>
+      </menu>
+      <menu label="Menu3">
+        <menuitem label="Item1"/>
+        <menuitem label="Item2"/>
+        <menuitem label="Item3"/>
+        <menuitem label="Item4"/>
+        <menuitem label="Item5"/>
+        <menuitem label="Item6"/>
+      </menu>
+      <menu label="Menu2">
+        <menu label="Submenu1">
+          <menuitem label="Item1"/>
+          <menuitem label="Item2"/>
+          <menuitem label="Item3"/>
+          <menuitem label="Item4"/>
+          <menuitem label="Item5"/>
+          <menuitem label="Item6"/>        
+        </menu>
+        <menu label="Submenu2">
+          <menuitem label="Item1"/>
+          <menuitem label="Item2"/>
+          <menuitem label="Item3"/>
+          <menuitem label="Item4"/>
+          <menuitem label="Item5"/>
+          <menuitem label="Item6"/>        
+        </menu>
+        <menu label="Submenu3">
+          <menuitem label="Item1"/>
+          <menuitem label="Item2"/>
+          <menuitem label="Item3"/>
+          <menuitem label="Item4"/>
+          <menuitem label="Item5"/>
+          <menuitem label="Item6"/>        
+        </menu>
+      </menu>
+    </menubar>
+	<splitpane orient="horizontal" resizeable="true">
+		<expandable>
+			<titlebar label="Buttons"/>
+			<button id="button1"
+			        label="Button1"
+			        onclick="component.setBackground(Color.RED)"
+			        width="100px"
+			        height="100px"/>
+			<button id="button2"
+			        label="Button2"
+			        onclick="component.setBackground(Color.RED)"
+			        width="100px"
+			        height="100px"/>
+			<button id="button3"
+			        label="Button3"
+			        onclick="component.setBackground(Color.RED)"
+			        width="100px"
+			        height="100px"/>
+			<button id="button4"
+			        label="Button4"
+			        onclick="component.setBackground(Color.RED)"
+			        width="100px"
+			        height="100px"/>
+			<button id="button5"
+			        label="Button5"
+			        onclick="playWithFire()"
+			        width="100px"
+			        height="100px"/>
+		</expandable>
+	    <vbox>
+		    <richtext/>
+			<groupbox>
+			  <radiogroup>
+			    <radio label="radio1"/>
+			    <radio label="radio2"/>
+			    <radio label="radio3"/>
+			    <radio label="radio4"/>
+			    <radio label="radio5"/>
+			  </radiogroup>
+			</groupbox>
+		</vbox>
+	</splitpane>
+  </splitpane>
+</window>
